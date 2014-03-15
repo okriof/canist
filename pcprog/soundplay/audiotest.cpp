@@ -2,7 +2,7 @@
 #include <fstream>
 #include <unistd.h>
 #include "audiopulse.h"
-#include "../canrec.h"
+#include "../canist/canrec.h"
 
 int main()
 {

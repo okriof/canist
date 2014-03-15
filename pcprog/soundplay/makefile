@@ -9,7 +9,8 @@ LD_FLAGS = -lpulse
 #-lpthread -ldl -lrt -std=c++0x 
 #LD_FLAGS = -L . -lftd2xx -lpthread -ldl -lrt -std=c++0x 
 
-#all : canist canFilterPrinter canPrintUnseen canPlot canPosest
+# required package: libpulse-dev
+
 all : audiotest
 
 audiopulse.o : audiopulse.c audiopulse.h makefile
@@ -20,7 +21,7 @@ audiotest.o : audiotest.cpp audiopulse.h makefile
 
 
 audiotest : audiopulse.o audiotest.o makefile
-	g++ -o audiotest audiopulse.o audiotest.o ../canrec.o ../canframe.o  $(LD_FLAGS)
+	g++ -o audiotest audiopulse.o audiotest.o ../canist/canrec.o ../canist/canframe.o  $(LD_FLAGS)
 
 
 clean :
