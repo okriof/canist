@@ -7,7 +7,7 @@
 int main()
 {
 //	CanrecDecfile can("../datadumpsIX/skgTskolan.dumpdec2", false, true);
-	CanrecDecfile can("../data.dumpdec2");
+	CanrecDecfile can("../canist/data.dumpdec2");
 
 	std::ifstream audioin("schn");
 	const unsigned long frames = 5676032;
