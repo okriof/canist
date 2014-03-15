@@ -40,22 +40,23 @@ try{
 			}
 
 			// SWM module (one of two messages) and button change
+			int systemResp = 0;
 			if (frame.ident == 2097254 && frame.data[7] != lastBtn)
 			{
 				lastBtn = frame.data[7];
 				cout << (int)lastBtn << ", buffersize " << can.getSize() << endl;
 
 				if (lastBtn == 125) // next
-					system("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next");
+					systemResp = system("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next");
 
 				if (lastBtn == 126) // previous
-					system("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous");
+					systemResp = system("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous");
 	
 				if (lastBtn == 121 || lastBtn == 122) //prev/next + minus (pause)
-					system("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Pause");
+					systemResp = system("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Pause");
 				
 				if (lastBtn == 117 || lastBtn == 118) //prev/next + plus (playpause)
-					system("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause");
+					systemResp = system("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause");
 			}
 
 		}
