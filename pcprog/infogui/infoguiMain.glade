@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <!-- interface-requires gtk+ 3.0 -->
+  <object class="GtkWindow" id="winInfoMain">
+    <property name="width_request">800</property>
+    <property name="height_request">600</property>
+    <property name="can_focus">False</property>
+    <property name="default_width">800</property>
+    <property name="default_height">600</property>
+    <property name="hide_titlebar_when_maximized">True</property>
+    <child>
+      <object class="GtkFixed" id="fixed1">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkButton" id="btnClose">
+            <property name="label">gtk-close</property>
+            <property name="use_action_appearance">False</property>
+            <property name="width_request">100</property>
+            <property name="height_request">80</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="use_action_appearance">False</property>
+            <property name="use_stock">True</property>
+          </object>
+          <packing>
+            <property name="x">34</property>
+            <property name="y">494</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkFixed" id="fixed2">
+            <property name="width_request">600</property>
+            <property name="height_request">600</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkImage" id="imCar">
+                <property name="width_request">100</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="pixbuf">imgs/base.png</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lblEngine">
+                <property name="width_request">100</property>
+                <property name="height_request">27</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt;&lt;b&gt;E&lt;/b&gt;&lt;/span&gt;</property>
+                <property name="use_markup">True</property>
+              </object>
+              <packing>
+                <property name="x">50</property>
+                <property name="y">76</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btnRPM">
+                <property name="use_action_appearance">False</property>
+                <property name="width_request">100</property>
+                <property name="height_request">10</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <property name="relief">none</property>
+                <property name="xalign">1</property>
+                <child>
+                  <object class="GtkLabel" id="lblRPM">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt;&lt;b&gt;0&lt;/b&gt;&lt;/span&gt;</property>
+                    <property name="use_markup">True</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="y">100</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btnEnT">
+                <property name="use_action_appearance">False</property>
+                <property name="width_request">100</property>
+                <property name="height_request">10</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <property name="relief">none</property>
+                <property name="xalign">1</property>
+                <child>
+                  <object class="GtkLabel" id="lblEnT">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">&lt;span foreground="#0000a0" size="x-large"&gt;&lt;b&gt;-2&lt;/b&gt;&lt;/span&gt;</property>
+                    <property name="use_markup">True</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="y">130</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lblEngine1">
+                <property name="width_request">100</property>
+                <property name="height_request">27</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="xalign">0</property>
+                <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt; rpm&lt;/span&gt;</property>
+                <property name="use_markup">True</property>
+              </object>
+              <packing>
+                <property name="x">100</property>
+                <property name="y">106</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lblEngine2">
+                <property name="width_request">100</property>
+                <property name="height_request">10</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="xalign">0</property>
+                <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt; °C&lt;/span&gt;</property>
+                <property name="use_markup">True</property>
+              </object>
+              <packing>
+                <property name="x">100</property>
+                <property name="y">136</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btnLPH">
+                <property name="use_action_appearance">False</property>
+                <property name="width_request">100</property>
+                <property name="height_request">10</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <property name="relief">none</property>
+                <property name="xalign">1</property>
+                <child>
+                  <object class="GtkLabel" id="lblLPH">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt;&lt;b&gt;2350&lt;/b&gt;&lt;/span&gt;</property>
+                    <property name="use_markup">True</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="y">160</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lblEngine3">
+                <property name="width_request">100</property>
+                <property name="height_request">10</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="xalign">0</property>
+                <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt; l/h&lt;/span&gt;</property>
+                <property name="use_markup">True</property>
+              </object>
+              <packing>
+                <property name="x">100</property>
+                <property name="y">166</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lblCar">
+                <property name="width_request">100</property>
+                <property name="height_request">10</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt;&lt;b&gt;C&lt;/b&gt;&lt;/span&gt;</property>
+                <property name="use_markup">True</property>
+              </object>
+              <packing>
+                <property name="x">450</property>
+                <property name="y">75</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lblCar1">
+                <property name="width_request">100</property>
+                <property name="height_request">10</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="xalign">0</property>
+                <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt; km/h&lt;/span&gt;</property>
+                <property name="use_markup">True</property>
+              </object>
+              <packing>
+                <property name="x">500</property>
+                <property name="y">106</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lblCar2">
+                <property name="width_request">100</property>
+                <property name="height_request">10</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="xalign">0</property>
+                <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt; °/s&lt;/span&gt;</property>
+                <property name="use_markup">True</property>
+              </object>
+              <packing>
+                <property name="x">500</property>
+                <property name="y">136</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lblCar3">
+                <property name="width_request">100</property>
+                <property name="height_request">10</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="xalign">0</property>
+                <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt; km/l&lt;/span&gt;</property>
+                <property name="use_markup">True</property>
+              </object>
+              <packing>
+                <property name="x">500</property>
+                <property name="y">166</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lblCar4">
+                <property name="width_request">100</property>
+                <property name="height_request">10</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="xalign">0</property>
+                <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt; l/100km&lt;/span&gt;</property>
+                <property name="use_markup">True</property>
+              </object>
+              <packing>
+                <property name="x">500</property>
+                <property name="y">196</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btnKPH">
+                <property name="use_action_appearance">False</property>
+                <property name="width_request">100</property>
+                <property name="height_request">10</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <property name="relief">none</property>
+                <property name="xalign">1</property>
+                <child>
+                  <object class="GtkLabel" id="lblKPH">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt;&lt;b&gt;0&lt;/b&gt;&lt;/span&gt;</property>
+                    <property name="use_markup">True</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="x">400</property>
+                <property name="y">100</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btnTrnRt">
+                <property name="use_action_appearance">False</property>
+                <property name="width_request">100</property>
+                <property name="height_request">10</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <property name="relief">none</property>
+                <property name="xalign">1</property>
+                <child>
+                  <object class="GtkLabel" id="lblTrnRt">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt;&lt;b&gt;2350&lt;/b&gt;&lt;/span&gt;</property>
+                    <property name="use_markup">True</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="x">400</property>
+                <property name="y">130</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btnKPL">
+                <property name="use_action_appearance">False</property>
+                <property name="width_request">100</property>
+                <property name="height_request">10</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <property name="relief">none</property>
+                <property name="xalign">1</property>
+                <child>
+                  <object class="GtkLabel" id="lblKPL">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt;&lt;b&gt;2350&lt;/b&gt;&lt;/span&gt;</property>
+                    <property name="use_markup">True</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="x">400</property>
+                <property name="y">160</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btnInT">
+                <property name="use_action_appearance">False</property>
+                <property name="width_request">100</property>
+                <property name="height_request">10</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <property name="relief">none</property>
+                <property name="xalign">1</property>
+                <child>
+                  <object class="GtkLabel" id="lblInT">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">&lt;span foreground="#0000a0" size="x-large"&gt;&lt;b&gt;-2&lt;/b&gt;&lt;/span&gt;</property>
+                    <property name="use_markup">True</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="x">400</property>
+                <property name="y">220</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btnOutT">
+                <property name="use_action_appearance">False</property>
+                <property name="width_request">100</property>
+                <property name="height_request">10</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <property name="relief">none</property>
+                <property name="xalign">1</property>
+                <child>
+                  <object class="GtkLabel" id="lblOutT">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">&lt;span foreground="#0000a0" size="x-large"&gt;&lt;b&gt;-2&lt;/b&gt;&lt;/span&gt;</property>
+                    <property name="use_markup">True</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="x">400</property>
+                <property name="y">400</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btnVolt">
+                <property name="use_action_appearance">False</property>
+                <property name="width_request">100</property>
+                <property name="height_request">10</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <property name="relief">none</property>
+                <property name="xalign">1</property>
+                <child>
+                  <object class="GtkLabel" id="lblVolt">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt;&lt;b&gt;2350&lt;/b&gt;&lt;/span&gt;</property>
+                    <property name="use_markup">True</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="y">190</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lblEngine4">
+                <property name="width_request">100</property>
+                <property name="height_request">10</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="xalign">0</property>
+                <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt; Volt&lt;/span&gt;</property>
+                <property name="use_markup">True</property>
+              </object>
+              <packing>
+                <property name="x">100</property>
+                <property name="y">196</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lblKeyState">
+                <property name="width_request">100</property>
+                <property name="height_request">27</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="xalign">0</property>
+                <property name="yalign">0.47999998927116394</property>
+                <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt;&lt;b&gt;III&lt;/b&gt;&lt;/span&gt;</property>
+                <property name="use_markup">True</property>
+              </object>
+              <packing>
+                <property name="x">274</property>
+                <property name="y">223</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lblCar5">
+                <property name="width_request">100</property>
+                <property name="height_request">10</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="xalign">0</property>
+                <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt; °C&lt;/span&gt;</property>
+                <property name="use_markup">True</property>
+              </object>
+              <packing>
+                <property name="x">500</property>
+                <property name="y">226</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btnLPK">
+                <property name="use_action_appearance">False</property>
+                <property name="width_request">100</property>
+                <property name="height_request">10</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <property name="relief">none</property>
+                <property name="xalign">1</property>
+                <child>
+                  <object class="GtkLabel" id="lblLPK">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">&lt;span foreground="#0000a0" size="x-large"&gt;&lt;b&gt;-2&lt;/b&gt;&lt;/span&gt;</property>
+                    <property name="use_markup">True</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="x">400</property>
+                <property name="y">190</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lblWrpmLF">
+                <property name="width_request">10</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="xalign">0</property>
+                <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt; rpm&lt;/span&gt;</property>
+                <property name="use_markup">True</property>
+                <property name="angle">90</property>
+              </object>
+              <packing>
+                <property name="x">211</property>
+                <property name="y">112</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lblWrpmRF">
+                <property name="width_request">10</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="xalign">0</property>
+                <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt; rpm&lt;/span&gt;</property>
+                <property name="use_markup">True</property>
+                <property name="angle">90</property>
+              </object>
+              <packing>
+                <property name="x">365</property>
+                <property name="y">112</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lblWrpmLR">
+                <property name="width_request">10</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="xalign">0</property>
+                <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt; rpm&lt;/span&gt;</property>
+                <property name="use_markup">True</property>
+                <property name="angle">90</property>
+              </object>
+              <packing>
+                <property name="x">211</property>
+                <property name="y">385</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lblWrpmRR">
+                <property name="width_request">10</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="xalign">0</property>
+                <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt; rpm&lt;/span&gt;</property>
+                <property name="use_markup">True</property>
+                <property name="angle">90</property>
+              </object>
+              <packing>
+                <property name="x">365</property>
+                <property name="y">385</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lblWrpmDRear">
+                <property name="width_request">100</property>
+                <property name="height_request">27</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt; rpm&lt;/span&gt;</property>
+                <property name="use_markup">True</property>
+              </object>
+              <packing>
+                <property name="x">249</property>
+                <property name="y">416</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lblWrpmDFront">
+                <property name="width_request">100</property>
+                <property name="height_request">10</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt; rpm&lt;/span&gt;</property>
+                <property name="use_markup">True</property>
+              </object>
+              <packing>
+                <property name="x">249</property>
+                <property name="y">128</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lblWrpmDLeft">
+                <property name="width_request">10</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="xalign">0</property>
+                <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt; rpm&lt;/span&gt;</property>
+                <property name="use_markup">True</property>
+                <property name="angle">90</property>
+              </object>
+              <packing>
+                <property name="x">178</property>
+                <property name="y">335</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lblWrpmDRight">
+                <property name="width_request">10</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="xalign">0</property>
+                <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt; rpm&lt;/span&gt;</property>
+                <property name="use_markup">True</property>
+                <property name="angle">90</property>
+              </object>
+              <packing>
+                <property name="x">399</property>
+                <property name="y">335</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="imgFLDoorOpen">
+                <property name="width_request">100</property>
+                <property name="height_request">80</property>
+                <property name="can_focus">False</property>
+                <property name="pixbuf">imgs/frontleftdoor.png</property>
+              </object>
+              <packing>
+                <property name="x">145</property>
+                <property name="y">185</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="imgFRDoorOpen">
+                <property name="width_request">100</property>
+                <property name="height_request">80</property>
+                <property name="can_focus">False</property>
+                <property name="pixbuf">imgs/frontrightdoor.png</property>
+              </object>
+              <packing>
+                <property name="x">355</property>
+                <property name="y">185</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="imgRLDoorOpen">
+                <property name="width_request">100</property>
+                <property name="height_request">80</property>
+                <property name="can_focus">False</property>
+                <property name="pixbuf">imgs/rearleftdoor.png</property>
+              </object>
+              <packing>
+                <property name="x">145</property>
+                <property name="y">294</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="imgRRDoorOpen">
+                <property name="width_request">100</property>
+                <property name="height_request">80</property>
+                <property name="can_focus">False</property>
+                <property name="pixbuf">imgs/rearrightdoor.png</property>
+              </object>
+              <packing>
+                <property name="x">355</property>
+                <property name="y">294</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="imgTkDoorOpen">
+                <property name="width_request">100</property>
+                <property name="height_request">80</property>
+                <property name="can_focus">False</property>
+                <property name="pixbuf">imgs/trunkdoor.png</property>
+              </object>
+              <packing>
+                <property name="x">216</property>
+                <property name="y">456</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lblEnv1">
+                <property name="width_request">100</property>
+                <property name="height_request">10</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="xalign">0</property>
+                <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt; °C&lt;/span&gt;</property>
+                <property name="use_markup">True</property>
+              </object>
+              <packing>
+                <property name="x">500</property>
+                <property name="y">406</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btnOutLight">
+                <property name="use_action_appearance">False</property>
+                <property name="width_request">100</property>
+                <property name="height_request">10</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <property name="relief">none</property>
+                <property name="xalign">1</property>
+                <child>
+                  <object class="GtkLabel" id="lblOutLight">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">&lt;span foreground="#0000a0" size="x-large"&gt;&lt;b&gt;-2&lt;/b&gt;&lt;/span&gt;</property>
+                    <property name="use_markup">True</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="x">400</property>
+                <property name="y">430</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lblEnv2">
+                <property name="width_request">100</property>
+                <property name="height_request">10</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="xalign">0</property>
+                <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt; Light&lt;/span&gt;</property>
+                <property name="use_markup">True</property>
+              </object>
+              <packing>
+                <property name="x">500</property>
+                <property name="y">436</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btnFuelL">
+                <property name="use_action_appearance">False</property>
+                <property name="width_request">100</property>
+                <property name="height_request">10</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <property name="relief">none</property>
+                <property name="xalign">1</property>
+                <child>
+                  <object class="GtkLabel" id="lblFuelL">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt;&lt;b&gt;2350&lt;/b&gt;&lt;/span&gt;</property>
+                    <property name="use_markup">True</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="y">220</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btnFuelR">
+                <property name="use_action_appearance">False</property>
+                <property name="width_request">100</property>
+                <property name="height_request">10</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <property name="relief">none</property>
+                <property name="xalign">1</property>
+                <child>
+                  <object class="GtkLabel" id="lblFuelR">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt;&lt;b&gt;2350&lt;/b&gt;&lt;/span&gt;</property>
+                    <property name="use_markup">True</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="y">250</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lblEngine5">
+                <property name="width_request">100</property>
+                <property name="height_request">10</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="xalign">0</property>
+                <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt; Fuel L&lt;/span&gt;</property>
+                <property name="use_markup">True</property>
+              </object>
+              <packing>
+                <property name="x">100</property>
+                <property name="y">226</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lblEngine6">
+                <property name="width_request">100</property>
+                <property name="height_request">10</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="xalign">0</property>
+                <property name="label" translatable="yes">&lt;span foreground="#00a000" size="x-large"&gt; Fuel R&lt;/span&gt;</property>
+                <property name="use_markup">True</property>
+              </object>
+              <packing>
+                <property name="x">100</property>
+                <property name="y">256</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="imgROutlet">
+                <property name="width_request">5</property>
+                <property name="height_request">5</property>
+                <property name="can_focus">False</property>
+                <property name="pixbuf">imgs/flash.png</property>
+              </object>
+              <packing>
+                <property name="x">336</property>
+                <property name="y">429</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lblIndRev">
+                <property name="width_request">20</property>
+                <property name="height_request">27</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">&lt;span foreground="#0000a0" size="x-large"&gt;&lt;b&gt;R&lt;/b&gt;&lt;/span&gt;</property>
+                <property name="use_markup">True</property>
+              </object>
+              <packing>
+                <property name="x">293</property>
+                <property name="y">249</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lblIndPark">
+                <property name="width_request">20</property>
+                <property name="height_request">20</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">&lt;span foreground="#a00000" size="x-large"&gt;&lt;b&gt;P&lt;/b&gt;&lt;/span&gt;</property>
+                <property name="use_markup">True</property>
+              </object>
+              <packing>
+                <property name="x">293</property>
+                <property name="y">283</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="x">200</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
